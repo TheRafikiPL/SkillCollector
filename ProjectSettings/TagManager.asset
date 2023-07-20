@@ -47,12 +47,18 @@ TagManager:
   - name: Background
     uniqueID: 504497707
     locked: 0
+  - name: Items
+    uniqueID: 817295737
+    locked: 0
   - name: Characters
     uniqueID: 865419593
+    locked: 0
+  - name: Walls
+    uniqueID: 1830301899
     locked: 0
   - name: Weapons
     uniqueID: 1980478129
     locked: 0
-  - name: Items
-    uniqueID: 817295737
+  - name: UI
+    uniqueID: 588559691
     locked: 0

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : Character
 {
@@ -15,10 +17,14 @@ public class Player : Character
     [SerializeField]
     int skillEquipmentSize;
     Hand hand;
+    [SerializeField]
+    Slider healthBar;
     void Start() 
     {
         skillEquipment = new List<SkillInfo>();
         hand = GetComponentInChildren<Hand>();
+        healthBar.maxValue = maxHealth;
+        UpdateSlider();
     }
     void Update()
     {
@@ -53,10 +59,13 @@ public class Player : Character
     {
         if(other.tag == "Item")
         {
-            SkillInfo skill = ScriptableObject.CreateInstance<SkillInfo>();
-            skill.SetParams(other.GetComponent<Item>().skill);
-            AddToEq(skill);
-            Destroy(other.gameObject);
+            if(skillEquipment.Count < skillEquipmentSize)
+            {
+                SkillInfo skill = ScriptableObject.CreateInstance<SkillInfo>();
+                skill.SetParams(other.GetComponent<Item>().skill);
+                AddToEq(skill);
+                Destroy(other.gameObject);
+            }
         }
     }
     void AddToEq(SkillInfo s)
@@ -110,5 +119,20 @@ public class Player : Character
         {
             return currentDamage;
         }
+    }
+    void UpdateSlider()
+    {
+        healthBar.value = health;
+    }
+    public override void TakeDamage(int damage, Vector3 knockback)
+    {
+        base.TakeDamage(damage, knockback);
+        UpdateSlider();
+    }
+    protected override void Death()
+    {
+        AudioController.instance.PlaySound(deathSound);
+        SceneManager.LoadScene(0);
+        AudioController.instance.PlayMenuBackMusic();
     }
 }

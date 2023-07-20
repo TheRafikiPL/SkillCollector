@@ -26,5 +26,6 @@ public class DamageDealing : MonoBehaviour
     {
         usableSkillInfo.isReady = false;
         StartCoroutine(AttackCooldown(usableSkillInfo.cooldown));
+        AudioController.instance.PlaySound(usableSkillInfo.effectSound);
     }
 }

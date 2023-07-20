@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
@@ -18,11 +19,19 @@ public class Character : MonoBehaviour
     protected int health = 10;
     [SerializeField]
     protected int maxHealth = 10;
+    [SerializeField]
+    protected string deathSound;
+    [SerializeField]
+    string damageSound;
     
     void Start()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
         knockbackVector = Vector3.zero;
+    }
+    protected void Move(Vector2 v)
+    {
+        Move(v.x,v.y);
     }
     protected void Move(float x, float y)
     {
@@ -41,6 +50,7 @@ public class Character : MonoBehaviour
             return;
         }
         SetKnockback(knockback);
+        AudioController.instance.PlaySound(damageSound);
     }
     public void Heal(int hp)
     {
@@ -50,7 +60,7 @@ public class Character : MonoBehaviour
             health = maxHealth;
         }
     }
-    void Death()
+    virtual protected void Death()
     {
         Destroy(this.gameObject);
     }

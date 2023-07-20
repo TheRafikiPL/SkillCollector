@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Sword
   damage: 2
-  pushForce: 2
+  pushForce: 5
   cooldown: 0.5
   count: -1
   projectileSpeed: 0
   projectilePrefab: {fileID: 0}
   isReady: 1
+  effectSound: Slash1

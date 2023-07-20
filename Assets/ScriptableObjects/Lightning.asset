@@ -20,3 +20,4 @@ MonoBehaviour:
   projectileSpeed: 1.2
   projectilePrefab: {fileID: 1159608768922850237, guid: 95e0bb7bea926e640ad35850ab6d04ed, type: 3}
   isReady: 1
+  effectSound: Skill2

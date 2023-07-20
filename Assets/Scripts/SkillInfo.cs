@@ -21,6 +21,8 @@ public class SkillInfo : ScriptableObject
     public GameObject projectilePrefab;
     [SerializeField]
     public bool isReady = true;
+    [SerializeField]
+    public string effectSound;
 
     public void SetParams(SkillInfo s)
     {
@@ -31,5 +33,6 @@ public class SkillInfo : ScriptableObject
         count = s.count;
         projectileSpeed = s.projectileSpeed;
         projectilePrefab = s.projectilePrefab;
+        effectSound = s.effectSound;
     }
 }
