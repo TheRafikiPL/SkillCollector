@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c58babba4b737c4d9efbf5a424194ad, type: 3}
+  m_Name: Lightning
+  m_EditorClassIdentifier: 
+  skillName: Lightning
+  damage: 30
+  pushForce: 0
+  cooldown: 1.5
+  count: 2
+  projectileSpeed: 1.2
+  projectilePrefab: {fileID: 1159608768922850237, guid: 95e0bb7bea926e640ad35850ab6d04ed, type: 3}
+  isReady: 1
