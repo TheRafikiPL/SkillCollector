@@ -7,6 +7,7 @@ public class SkillHand : DamageDealing
     public void ChangeSkill(SkillInfo s)
     {
         usableSkillInfo = s;
+        EnableAttack();
     }
     protected override void Attack()
     {

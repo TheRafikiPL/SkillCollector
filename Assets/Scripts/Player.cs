@@ -98,6 +98,7 @@ public class Player : Character
             return;
         }
         baseWeapon.SetActive(true);
+        baseWeapon.GetComponent<Weapon>().EnableAttack();
         skillHand.SetActive(false);
         UIController.instance.UpdateSkillText("");
     }

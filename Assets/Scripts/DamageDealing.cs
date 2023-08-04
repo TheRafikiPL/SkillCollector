@@ -6,6 +6,10 @@ public class DamageDealing : MonoBehaviour
 {
     [SerializeField]
     protected SkillInfo usableSkillInfo;
+    public void EnableAttack()
+    {
+        usableSkillInfo.isReady = true;
+    }
     void Update() 
     {
         if(Input.GetMouseButtonDown(0))
